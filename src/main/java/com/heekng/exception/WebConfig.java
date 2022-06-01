@@ -3,6 +3,7 @@ package com.heekng.exception;
 import com.heekng.exception.filter.LogFilter;
 import com.heekng.exception.intercepor.LogInterceptor;
 import com.heekng.exception.resolver.MyHandlerExceptionResolver;
+import com.heekng.exception.resolver.UserHandlerExceptionResolver;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +29,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void extendHandlerExceptionResolvers(List<HandlerExceptionResolver> resolvers) {
         resolvers.add(new MyHandlerExceptionResolver());
+        resolvers.add(new UserHandlerExceptionResolver());
     }
 
     //    @Bean
